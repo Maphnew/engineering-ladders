@@ -5,7 +5,14 @@ function App() {
   return (
     <>
       <div>
-        <ApexCharts />
+        <ApexCharts title={"D7 Developer 7"} series={
+          [
+            {
+              name: "Mr. Spenser",
+              data: [5, 5, 3, 4, 5]
+            }
+          ]
+        }/>
       </div>
     </>
   )

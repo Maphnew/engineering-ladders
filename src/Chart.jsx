@@ -8,19 +8,18 @@ class ApexChart extends React.Component {
 
       this.state = {
       
-        series: [
-          {
-            name: "Radar Series 1",
-            data: [5, 5, 3, 4, 5]
-          }
-        ],
+        series: props.series,
         options: {
           chart: {
             height: 350,
             type: 'radar',
+            toolbar: {
+              show: false
+            },
           },
           title: {
-            text: 'D7 Developer 7'
+            text: props.title,
+            align: 'center'
           },
           yaxis: {
             stepSize: 1,
@@ -37,6 +36,17 @@ class ApexChart extends React.Component {
             labels: {
               show: true
             }
+          },
+          tooltip: {
+            enabled: true,
+            x: {
+              show: false,
+            }
+          },
+          axisTicks: {
+            show: true,
+            borderType: 'solid',
+            
           },
           dataLabels: {
             enabled: true,
