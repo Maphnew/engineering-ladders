@@ -27,14 +27,6 @@ import { AppContent } from "@/components/app-content"
 import './globals.css'
 
 export default function Layout({ children }: { children?: React.ReactNode }) {
-  console.log('App.tsx')
-  const url = new URL('./worker/shared-worker.js', import.meta.url)
-  const worker = new SharedWorker(url)
-  worker.port.start()
-  worker.port.onmessage = (event) => {
-    console.log('EVENT', event.data)
-  }
-  worker.port.postMessage('APPPPP')
   return (
     <ThemeProvider defaultTheme="dark" storageKey="vite-ui-theme">
       <SidebarProvider>
